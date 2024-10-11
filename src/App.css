@@ -1,38 +1,132 @@
-.App {
-  text-align: center;
+ /* Container styling for form modal */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width: 90%; /* Responsive width */
+  max-width: 600px;
+  max-height: 90vh; /* Modal can use up to 90% of the viewport height */
+  overflow-y: auto; /* Enable vertical scroll if the content is too tall */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Input and Label styling */
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+input[type="text"], input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="email"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Secondary button styling */
+button[type="button"] {
+  background-color: #6c757d;
+  margin-left: 2px;
+}
+
+button[type="button"]:hover {
+  background-color: #5a6268;
+}
+
+/* Error messages */
+.error {
+  color: red;
+  font-size: 0.85rem;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+/* Table styling (if any table is used in form) */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+/* Responsive form elements for smaller screens */
+@media (max-width: 768px) {
+  .modal {
+    width: 100%;
+    padding: 20px;
+    max-width: 90%;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  button[type="button"] {
+    margin-left: 0;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Flexbox layout for form fields and buttons */
+form div {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-bottom: 15px;
 }
 
-.App-link {
-  color: #61dafb;
+form {
+  display: flex;
+  flex-direction: column;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+button[type="submit"] {
+  background-color: #28a745;
+}
+
+button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+button[type="button"]:disabled {
+  background-color: #999;
+}
+
+/* Extra padding for input fields on mobile devices */
+@media (max-width: 480px) {
+  input[type="text"], input[type="email"] {
+    padding: 12px;
   }
 }
+
